@@ -75,6 +75,7 @@
   }
   body {
     @apply bg-background text-foreground font-sans antialiased;
+    padding-top: 72px; /* For fixed header */
   }
   h1, h2, h3, h4, h5, h6 {
     @apply font-display font-bold;
@@ -91,11 +92,11 @@
   }
   
   .btn-secondary {
-    @apply flex items-center justify-center gap-2 bg-transparent border border-gray-200 text-gray-700 font-semibold py-3 px-6 rounded-full transition-all duration-300 hover:border-gray-400;
+    @apply flex items-center justify-center gap-2 bg-transparent border border-gray-700 text-white font-semibold py-3 px-6 rounded-full transition-all duration-300 hover:border-gray-500;
   }
   
   .nav-link {
-    @apply relative text-sm font-medium transition-colors hover:text-foreground/80 text-foreground/60;
+    @apply relative text-sm font-medium transition-colors hover:text-white/80 text-white/60;
   }
   
   .nav-link:after {
@@ -107,7 +108,7 @@
   }
   
   .social-icon {
-    @apply flex items-center justify-center w-10 h-10 rounded-full border border-gray-200 text-gray-700 transition-all duration-300 hover:border-gray-400 hover:text-gray-900 hover:scale-110;
+    @apply flex items-center justify-center w-10 h-10 rounded-full border border-gray-700 text-gray-400 transition-all duration-300 hover:border-gray-500 hover:text-white hover:scale-110;
   }
   
   .hero-gradient {

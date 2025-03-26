@@ -4,6 +4,10 @@ import Header from '../components/Header';
 import Hero from '../components/Hero';
 import SocialLinks from '../components/SocialLinks';
 import AboutPreview from '../components/AboutPreview';
+import ProjectsPreview from '../components/ProjectsPreview';
+import Accomplishments from '../components/Accomplishments';
+import Testimonials from '../components/Testimonials';
+import CallToAction from '../components/CallToAction';
 import Footer from '../components/Footer';
 
 const Index: React.FC = () => {
@@ -18,6 +22,10 @@ const Index: React.FC = () => {
         <Hero />
         <SocialLinks />
         <AboutPreview />
+        <ProjectsPreview />
+        <Accomplishments />
+        <Testimonials />
+        <CallToAction />
       </main>
       <Footer />
     </div>
