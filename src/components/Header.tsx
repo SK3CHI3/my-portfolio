@@ -24,7 +24,7 @@ const Header: React.FC = () => {
 
   return (
     <header className={`fixed top-0 left-0 right-0 z-50 py-4 transition-all duration-300 ${
-      isScrolled ? 'bg-dark/95 backdrop-blur-sm shadow-md' : 'bg-dark'
+      isScrolled ? 'glassmorphism shadow-lg' : 'bg-transparent'
     }`}>
       <div className="hero-container flex justify-between items-center">
         <Link 
