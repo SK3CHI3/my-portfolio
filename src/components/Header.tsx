@@ -32,14 +32,13 @@ const Header: React.FC = () => {
           className="flex items-center gap-2 text-xl font-bold text-white hover:opacity-90 transition-opacity"
         >
           <div className="w-5 h-5 bg-neon"></div>
-          <span className="uppercase tracking-tight">MOSKUR.DEV</span>
+          <span className="uppercase tracking-tight">TECHTINKER</span>
         </Link>
         
         <nav className="hidden md:flex items-center gap-8">
           <Link to="/" className={`nav-link text-white ${location.pathname === '/' ? 'after:w-full' : ''}`}>Home</Link>
           <Link to="/about" className={`nav-link text-white ${location.pathname === '/about' ? 'after:w-full' : ''}`}>About me</Link>
           <Link to="/projects" className={`nav-link text-white ${location.pathname === '/projects' ? 'after:w-full' : ''}`}>Projects</Link>
-          <Link to="/blog" className={`nav-link text-white ${location.pathname === '/blog' ? 'after:w-full' : ''}`}>Blog</Link>
         </nav>
         
         <div className="flex items-center gap-4">
@@ -68,7 +67,6 @@ const Header: React.FC = () => {
           <Link to="/" className="nav-link text-white text-lg">Home</Link>
           <Link to="/about" className="nav-link text-white text-lg">About me</Link>
           <Link to="/projects" className="nav-link text-white text-lg">Projects</Link>
-          <Link to="/blog" className="nav-link text-white text-lg">Blog</Link>
           <Link 
             to="/contact" 
             className="bg-neon text-dark font-medium text-sm px-5 py-2 rounded-full mt-4"

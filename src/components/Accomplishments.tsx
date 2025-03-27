@@ -1,39 +1,82 @@
 
-import React from 'react';
+import React, { useEffect, useRef } from 'react';
 import { PlusCircle } from 'lucide-react';
 
 const Accomplishments: React.FC = () => {
+  const titleRef = useRef<HTMLHeadingElement>(null);
+  const itemRefs = useRef<(HTMLDivElement | null)[]>([]);
+  
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('opacity-100', 'translate-y-0');
+            entry.target.classList.remove('opacity-0', 'translate-y-10');
+          }
+        });
+      },
+      { threshold: 0.1 }
+    );
+    
+    if (titleRef.current) observer.observe(titleRef.current);
+    
+    itemRefs.current.forEach(item => {
+      if (item) observer.observe(item);
+    });
+    
+    return () => {
+      if (titleRef.current) observer.unobserve(titleRef.current);
+      
+      itemRefs.current.forEach(item => {
+        if (item) observer.unobserve(item);
+      });
+    };
+  }, []);
+
   return (
     <section className="py-16 bg-dark text-white">
       <div className="hero-container">
-        <h2 className="text-3xl md:text-4xl font-bold mb-12 text-center">
+        <h2 
+          ref={titleRef}
+          className="text-3xl md:text-4xl font-bold mb-12 text-center transition-all duration-700 ease-out opacity-0 translate-y-10"
+        >
           I TAKE <span className="text-neon">🔥PRIDE</span> IN MY<br/>ACCOMPLISHMENTS
         </h2>
         
         <div className="space-y-12">
-          <div className="flex items-start gap-6">
+          <div 
+            ref={el => itemRefs.current[0] = el}
+            className="flex items-start gap-6 transition-all duration-700 ease-out opacity-0 translate-y-10 delay-100"
+          >
             <div className="text-neon mt-1"><PlusCircle size={24} /></div>
             <div>
               <p className="text-lg font-semibold mb-2">
-                Recognized with the "Innovative Dev Award" for an app that helped small business vendors improve a 30% increase in sales.
+                Led the development of a secure cloud infrastructure that reduced operational costs by 35% while improving system reliability and security posture.
               </p>
             </div>
           </div>
           
-          <div className="flex items-start gap-6">
+          <div 
+            ref={el => itemRefs.current[1] = el}
+            className="flex items-start gap-6 transition-all duration-700 ease-out opacity-0 translate-y-10 delay-200"
+          >
             <div className="text-neon mt-1"><PlusCircle size={24} /></div>
             <div>
               <p className="text-lg font-semibold mb-2">
-                Contributed to Web Design 2023 by optimizing webpage loading speed resulting in a 40% decrease in page load times.
+                Developed and implemented a comprehensive cybersecurity framework that successfully prevented multiple potential data breaches and earned industry recognition.
               </p>
             </div>
           </div>
           
-          <div className="flex items-start gap-6">
+          <div 
+            ref={el => itemRefs.current[2] = el}
+            className="flex items-start gap-6 transition-all duration-700 ease-out opacity-0 translate-y-10 delay-300"
+          >
             <div className="text-neon mt-1"><PlusCircle size={24} /></div>
             <div>
               <p className="text-lg font-semibold mb-2">
-                Published a guest article on Medium discussing the importance of responsive design in modern web development.
+                Created a fullstack application that streamlined business workflows, resulting in a 40% increase in productivity and significant improvement in user experience.
               </p>
             </div>
           </div>
