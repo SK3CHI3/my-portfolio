@@ -1,9 +1,13 @@
+
 import React, { useEffect, useRef } from 'react';
-import { ArrowDown } from 'lucide-react';
+import { ArrowDown, Mail } from 'lucide-react';
 import { Link } from 'react-router-dom';
+
 const Hero: React.FC = () => {
   const heroRef = useRef<HTMLDivElement>(null);
   const imageRef = useRef<HTMLDivElement>(null);
+  const statusRef = useRef<HTMLDivElement>(null);
+
   useEffect(() => {
     const observer = new IntersectionObserver(([entry]) => {
       if (entry.isIntersecting) {
@@ -13,15 +17,18 @@ const Hero: React.FC = () => {
     }, {
       threshold: 0.1
     });
+    
     if (heroRef.current) {
       observer.observe(heroRef.current);
     }
+    
     return () => {
       if (heroRef.current) {
         observer.unobserve(heroRef.current);
       }
     };
   }, []);
+
   useEffect(() => {
     if (imageRef.current) {
       setTimeout(() => {
@@ -29,7 +36,15 @@ const Hero: React.FC = () => {
         imageRef.current?.classList.remove('opacity-0', 'translate-x-10');
       }, 500);
     }
+    
+    if (statusRef.current) {
+      setTimeout(() => {
+        statusRef.current?.classList.add('opacity-100');
+        statusRef.current?.classList.remove('opacity-0');
+      }, 1000);
+    }
   }, []);
+
   return <section className="relative pt-16 pb-24 overflow-hidden bg-dark text-white">
       <div className="absolute top-0 right-0 w-1/2 h-full opacity-20">
         <div className="w-full h-full bg-gradient-to-bl from-neon/20 to-transparent"></div>
@@ -46,25 +61,44 @@ const Hero: React.FC = () => {
               I'm Omollo Victor, a Fullstack Developer, Cloud Computing Specialist, and Cybersecurity Expert. 
               I build secure, scalable solutions that transform ideas into impactful digital experiences.
             </p>
-            <div className="flex flex-wrap gap-4">
-              <Link to="/contact" className="btn-primary">
+            <div className="flex flex-wrap gap-4 mb-6">
+              <Link to="/contact" className="btn-primary group">
+                <Mail size={18} className="group-hover:translate-y-[-2px] transition-transform" />
                 Let's Talk
               </Link>
-              <a href="https://drive.google.com/uc?export=download&id=YOURFILEID" className="btn-secondary group" target="_blank" rel="noopener noreferrer">
+              <a href="https://drive.google.com/file/d/1vNEcvOGXFVcHknbL8qY2PwHtsljQyDab/view?usp=sharing" className="btn-secondary group" target="_blank" rel="noopener noreferrer">
                 <ArrowDown size={18} className="group-hover:animate-bounce" />
                 Download CV
               </a>
             </div>
+            <div>
+              <a href="mailto:omollovictorotieno58@gmail.com" className="inline-flex items-center text-gray-300 hover:text-neon transition-colors">
+                <Mail size={16} className="mr-2" />
+                omollovictorotieno58@gmail.com
+              </a>
+            </div>
           </div>
           
-          <div className="lg:w-1/2 h-full flex justify-center lg:justify-end items-center">
+          <div className="lg:w-1/2 h-full flex justify-center lg:justify-end items-center relative">
             <div ref={imageRef} className="relative transition-all duration-700 ease-out opacity-0 translate-x-10">
               <div className="absolute -inset-0.5 bg-neon rounded-2xl blur opacity-30 animate-pulse"></div>
-              <img src="/lovable-uploads/a60a9c25-a909-4a80-9f80-2601c9644be6.png" alt="Omollo Victor" className="relative w-full max-w-md rounded-2xl bg-purple-400 shadow-xl z-10" />
+              <img src="/lovable-uploads/ec0dd91b-a938-4361-a70c-f8363e326689.png" alt="Omollo Victor" className="relative w-full max-w-md rounded-2xl shadow-xl z-10" />
+              
+              {/* Status indicator */}
+              <div 
+                ref={statusRef}
+                className="absolute -top-4 -right-4 bg-dark border-2 border-neon rounded-full py-2 px-4 shadow-lg z-20 opacity-0 transition-opacity duration-700"
+              >
+                <div className="flex items-center">
+                  <div className="h-3 w-3 bg-neon rounded-full mr-2 animate-pulse"></div>
+                  <span className="text-neon font-medium text-sm">Available for Work</span>
+                </div>
+              </div>
             </div>
           </div>
         </div>
       </div>
     </section>;
 };
+
 export default Hero;
