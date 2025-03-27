@@ -29,7 +29,7 @@ const Projects: React.FC = () => {
       title: "Universal Resource Hub",
       category: "Web Development",
       description: "A comprehensive platform providing educational resources and learning materials for students and educators.",
-      image: "/lovable-uploads/bcf4dfa9-3315-4514-a56b-463982860756.png",
+      image: "https://raw.githubusercontent.com/SK3CHI3/universal-resource-hub/main/img/homepage_screenshot.png",
       liveLink: "https://universal-resource-hub.netlify.app",
       githubLink: "https://github.com/SK3CHI3/universal-resource-hub"
     },
@@ -38,7 +38,7 @@ const Projects: React.FC = () => {
       title: "Kenyan Recipe Generator",
       category: "Web Development",
       description: "An application that generates random Kenyan recipes with ingredients and preparation instructions.",
-      image: "/lovable-uploads/bcf4dfa9-3315-4514-a56b-463982860756.png",
+      image: "https://raw.githubusercontent.com/SK3CHI3/random-kenyan-recipe-generator/main/screenshots/app_screenshot.png",
       liveLink: "https://kenyan-recipe-generator.netlify.app",
       githubLink: "https://github.com/SK3CHI3/random-kenyan-recipe-generator"
     },
@@ -47,15 +47,15 @@ const Projects: React.FC = () => {
       title: "Cloud Security Framework",
       category: "Cybersecurity",
       description: "A comprehensive security framework for cloud-based applications, focusing on AWS security best practices.",
-      image: "/lovable-uploads/bcf4dfa9-3315-4514-a56b-463982860756.png",
+      image: "/lovable-uploads/a60a9c25-a909-4a80-9f80-2601c9644be6.png",
       liveLink: "#",
       githubLink: "https://github.com/SK3CHI3"
     },
     {
       id: 4,
-      title: "DevOps Automation Pipeline",
-      category: "Cloud Computing",
-      description: "A CI/CD pipeline implementation using GitHub Actions and AWS for automated testing and deployment.",
+      title: "AI-Powered Recommendation Engine",
+      category: "AI Engineering",
+      description: "An intelligent system that provides personalized recommendations based on user behavior and preferences.",
       image: "/lovable-uploads/bcf4dfa9-3315-4514-a56b-463982860756.png",
       liveLink: "#",
       githubLink: "https://github.com/SK3CHI3"
@@ -65,22 +65,22 @@ const Projects: React.FC = () => {
       title: "Network Security Monitor",
       category: "Cybersecurity",
       description: "A tool for monitoring network traffic and detecting potential security threats in real-time.",
-      image: "/lovable-uploads/bcf4dfa9-3315-4514-a56b-463982860756.png",
+      image: "/lovable-uploads/a60a9c25-a909-4a80-9f80-2601c9644be6.png",
       liveLink: "#",
       githubLink: "https://github.com/SK3CHI3"
     },
     {
       id: 6,
-      title: "Serverless API Framework",
-      category: "Cloud Computing",
-      description: "A serverless framework for building scalable APIs using AWS Lambda and API Gateway.",
+      title: "Machine Learning Pipeline",
+      category: "AI Engineering",
+      description: "An end-to-end ML pipeline for data processing, model training, and deployment with CI/CD integration.",
       image: "/lovable-uploads/bcf4dfa9-3315-4514-a56b-463982860756.png",
       liveLink: "#",
       githubLink: "https://github.com/SK3CHI3"
     }
   ];
 
-  const categories = ['all', 'Web Development', 'Cybersecurity', 'Cloud Computing'];
+  const categories = ['all', 'Web Development', 'Cybersecurity', 'Cloud Computing', 'AI Engineering'];
   
   const filteredProjects = filter === 'all' 
     ? projects 
@@ -94,8 +94,8 @@ const Projects: React.FC = () => {
           <div className="hero-container">
             <h1 className="text-4xl md:text-5xl font-bold mb-8">My Projects</h1>
             <p className="text-gray-300 max-w-3xl mb-6">
-              Explore my portfolio of projects showcasing my skills in Fullstack Development, Cloud Computing, and Cybersecurity.
-              Each project represents unique challenges and demonstrates my approach to building secure, scalable solutions.
+              Explore my portfolio of projects showcasing my skills in Fullstack Development, Cloud Computing, AI Engineering, and Cybersecurity.
+              Each project represents unique challenges and demonstrates my approach to building secure, scalable, intelligent solutions.
             </p>
             
             <div className="flex flex-wrap gap-2 mb-8">
@@ -125,6 +125,10 @@ const Projects: React.FC = () => {
                     src={project.image} 
                     alt={project.title} 
                     className="w-full h-60 object-cover"
+                    onError={(e) => {
+                      const target = e.target as HTMLImageElement;
+                      target.src = "/lovable-uploads/bcf4dfa9-3315-4514-a56b-463982860756.png";
+                    }}
                   />
                   <CardContent className="p-6">
                     <p className="text-gray-500 mb-2">{project.category}</p>

@@ -41,7 +41,7 @@ const ProjectsPreview: React.FC = () => {
       id: 1,
       title: "Universal Resource Hub",
       category: "Web Development",
-      image: "/lovable-uploads/bcf4dfa9-3315-4514-a56b-463982860756.png",
+      image: "https://raw.githubusercontent.com/SK3CHI3/universal-resource-hub/main/img/homepage_screenshot.png",
       link: "https://universal-resource-hub.netlify.app",
       github: "https://github.com/SK3CHI3/universal-resource-hub"
     },
@@ -49,7 +49,7 @@ const ProjectsPreview: React.FC = () => {
       id: 2,
       title: "Kenyan Recipe Generator",
       category: "Web Development",
-      image: "/lovable-uploads/bcf4dfa9-3315-4514-a56b-463982860756.png",
+      image: "https://raw.githubusercontent.com/SK3CHI3/random-kenyan-recipe-generator/main/screenshots/app_screenshot.png",
       link: "https://kenyan-recipe-generator.netlify.app",
       github: "https://github.com/SK3CHI3/random-kenyan-recipe-generator"
     },
@@ -57,16 +57,16 @@ const ProjectsPreview: React.FC = () => {
       id: 3,
       title: "Cloud Security Framework",
       category: "Cybersecurity",
-      image: "/lovable-uploads/bcf4dfa9-3315-4514-a56b-463982860756.png",
-      link: "/projects/3",
+      image: "/lovable-uploads/a60a9c25-a909-4a80-9f80-2601c9644be6.png",
+      link: "#",
       github: "https://github.com/SK3CHI3"
     },
     {
       id: 4,
-      title: "DevOps Automation Pipeline",
-      category: "Cloud Computing",
+      title: "AI-Powered Recommendation Engine",
+      category: "AI Engineering",
       image: "/lovable-uploads/bcf4dfa9-3315-4514-a56b-463982860756.png",
-      link: "/projects/4",
+      link: "#",
       github: "https://github.com/SK3CHI3"
     }
   ];
@@ -93,6 +93,10 @@ const ProjectsPreview: React.FC = () => {
                   src={project.image} 
                   alt={project.title} 
                   className="w-full h-60 object-cover"
+                  onError={(e) => {
+                    const target = e.target as HTMLImageElement;
+                    target.src = "/lovable-uploads/bcf4dfa9-3315-4514-a56b-463982860756.png";
+                  }}
                 />
                 <CardContent className="p-6">
                   <p className="text-gray-500 mb-2">{project.category}</p>

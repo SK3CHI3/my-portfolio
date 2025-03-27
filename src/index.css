@@ -124,7 +124,7 @@
   }
   
   .profile-card::before {
-    @apply content-[""] absolute -inset-1 rounded-2xl blur-md opacity-40 bg-gradient-to-r from-neon/70 to-neon/40;
+    @apply content-[""] absolute -inset-1 rounded-2xl blur-md opacity-50 bg-gradient-to-r from-neon/80 to-neon/50;
   }
   
   .glassmorphism {

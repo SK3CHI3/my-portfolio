@@ -96,8 +96,8 @@ const Hero: React.FC = () => {
               <span className={`text-neon block min-h-[4rem] ${isTypingComplete ? '' : 'after:content-["_"] after:animate-pulse'}`}>{displayText2}</span>
             </h1>
             <p className="text-gray-300 mb-8 max-w-lg">
-              I'm Omollo Victor, a Fullstack Developer, Cloud Computing Specialist, and Cybersecurity Expert. 
-              I build secure, scalable solutions that transform ideas into impactful digital experiences.
+              I'm Omollo Victor, a Fullstack Developer, Cloud Computing Specialist, AI Engineering Expert, and Cybersecurity Professional. 
+              I build secure, scalable, intelligent solutions that transform ideas into impactful digital experiences.
             </p>
             <div className="flex flex-wrap gap-4 mb-6">
               <Link to="/contact" className="btn-primary group">
@@ -120,11 +120,14 @@ const Hero: React.FC = () => {
           <div className="lg:w-1/2 h-full flex justify-center lg:justify-end items-center relative">
             <div ref={imageRef} className="relative z-10 transition-all duration-700 ease-out opacity-0 translate-x-10">
               <div className="profile-card">
-                <img 
-                  src="/lovable-uploads/ec0dd91b-a938-4361-a70c-f8363e326689.png" 
-                  alt="Omollo Victor" 
-                  className="w-full max-w-md rounded-2xl shadow-xl z-10" 
-                />
+                <div className="relative z-10">
+                  <img 
+                    src="/lovable-uploads/ec0dd91b-a938-4361-a70c-f8363e326689.png" 
+                    alt="Omollo Victor" 
+                    className="w-full max-w-md rounded-2xl shadow-xl z-10 brightness-125 contrast-105" 
+                  />
+                  <div className="absolute inset-0 bg-white/10 rounded-2xl mix-blend-overlay"></div>
+                </div>
                 
                 {/* Status indicator */}
                 <div 
