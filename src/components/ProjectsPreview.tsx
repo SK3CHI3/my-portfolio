@@ -39,31 +39,35 @@ const ProjectsPreview: React.FC = () => {
   const projects = [
     {
       id: 1,
-      title: "SecureCloud Deployment",
-      category: "Cloud Computing & Security",
+      title: "Universal Resource Hub",
+      category: "Web Development",
       image: "/lovable-uploads/bcf4dfa9-3315-4514-a56b-463982860756.png",
-      link: "/projects/1"
+      link: "https://universal-resource-hub.netlify.app",
+      github: "https://github.com/SK3CHI3/universal-resource-hub"
     },
     {
       id: 2,
-      title: "FullStack E-Commerce Platform",
+      title: "Kenyan Recipe Generator",
       category: "Web Development",
       image: "/lovable-uploads/bcf4dfa9-3315-4514-a56b-463982860756.png",
-      link: "/projects/2"
+      link: "https://kenyan-recipe-generator.netlify.app",
+      github: "https://github.com/SK3CHI3/random-kenyan-recipe-generator"
     },
     {
       id: 3,
-      title: "Kubernetes Microservices",
-      category: "DevOps & Cloud",
+      title: "Cloud Security Framework",
+      category: "Cybersecurity",
       image: "/lovable-uploads/bcf4dfa9-3315-4514-a56b-463982860756.png",
-      link: "/projects/3"
+      link: "/projects/3",
+      github: "https://github.com/SK3CHI3"
     },
     {
       id: 4,
-      title: "Penetration Testing Framework",
-      category: "Cybersecurity",
+      title: "DevOps Automation Pipeline",
+      category: "Cloud Computing",
       image: "/lovable-uploads/bcf4dfa9-3315-4514-a56b-463982860756.png",
-      link: "/projects/4"
+      link: "/projects/4",
+      github: "https://github.com/SK3CHI3"
     }
   ];
 
@@ -74,7 +78,7 @@ const ProjectsPreview: React.FC = () => {
           ref={titleRef}
           className="text-3xl md:text-4xl font-bold mb-8 text-center transition-all duration-700 ease-out opacity-0 translate-y-10"
         >
-          HERE'S A GLIMPSE OF<br/>SOME EXCITING 🏆PROJECTS<br/>I'VE DONE
+          HERE'S A GLIMPSE OF<br/>SOME EXCITING 🏆PROJECTS<br/>I'VE BUILT
         </h2>
         
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-10">
@@ -93,13 +97,26 @@ const ProjectsPreview: React.FC = () => {
                 <CardContent className="p-6">
                   <p className="text-gray-500 mb-2">{project.category}</p>
                   <h3 className="text-xl font-bold mb-2">{project.title}</h3>
-                  <Link 
-                    to={project.link}
-                    className="inline-flex items-center text-neon hover:underline group"
-                  >
-                    View Details 
-                    <ArrowRight size={16} className="ml-1 transition-transform duration-300 group-hover:translate-x-1" />
-                  </Link>
+                  <div className="flex items-center gap-3">
+                    <a 
+                      href={project.link}
+                      className="inline-flex items-center text-neon hover:underline group"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
+                      Live Demo 
+                      <ArrowRight size={16} className="ml-1 transition-transform duration-300 group-hover:translate-x-1" />
+                    </a>
+                    <a 
+                      href={project.github}
+                      className="inline-flex items-center text-gray-700 hover:underline group"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
+                      GitHub 
+                      <ArrowRight size={16} className="ml-1 transition-transform duration-300 group-hover:translate-x-1" />
+                    </a>
+                  </div>
                 </CardContent>
               </Card>
             </div>

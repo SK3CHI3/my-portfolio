@@ -16,10 +16,10 @@ const Footer: React.FC = () => {
               className="flex items-center gap-2 text-xl font-bold hover:opacity-90 transition-opacity"
             >
               <div className="w-5 h-5 bg-neon"></div>
-              <span className="uppercase tracking-tight">MOSKUR.DEV</span>
+              <span className="uppercase tracking-tight">OMOLLO VICTOR</span>
             </Link>
             <p className="mt-4 text-gray-400 max-w-md">
-              Crafting memorable digital experiences through clean code and thoughtful design.
+              Building secure, scalable solutions through innovative code and design thinking.
             </p>
           </div>
           
@@ -30,7 +30,7 @@ const Footer: React.FC = () => {
                 <li><Link to="/" className="text-gray-400 hover:text-white transition-colors">Home</Link></li>
                 <li><Link to="/about" className="text-gray-400 hover:text-white transition-colors">About</Link></li>
                 <li><Link to="/projects" className="text-gray-400 hover:text-white transition-colors">Projects</Link></li>
-                <li><Link to="/blog" className="text-gray-400 hover:text-white transition-colors">Blog</Link></li>
+                <li><Link to="/contact" className="text-gray-400 hover:text-white transition-colors">Contact</Link></li>
               </ul>
             </div>
             
@@ -39,15 +39,15 @@ const Footer: React.FC = () => {
               <ul className="space-y-2">
                 <li className="flex items-center gap-2">
                   <Mail size={14} className="text-neon" />
-                  <a href="mailto:hello@portfolio.com" className="text-gray-400 hover:text-white transition-colors">hello@portfolio.com</a>
+                  <a href="mailto:omollovictor@gmail.com" className="text-gray-400 hover:text-white transition-colors">omollovictor@gmail.com</a>
                 </li>
                 <li className="flex items-center gap-2">
                   <Phone size={14} className="text-neon" />
-                  <a href="tel:+1234567890" className="text-gray-400 hover:text-white transition-colors">+1 (234) 567-890</a>
+                  <a href="tel:+254714525667" className="text-gray-400 hover:text-white transition-colors">+254 714 525 667</a>
                 </li>
                 <li className="flex items-center gap-2">
                   <MapPin size={14} className="text-neon" />
-                  <span className="text-gray-400">San Francisco, CA</span>
+                  <span className="text-gray-400">Nairobi, Kenya</span>
                 </li>
               </ul>
             </div>
@@ -56,16 +56,31 @@ const Footer: React.FC = () => {
         
         <div className="pt-8 border-t border-gray-800 flex flex-col sm:flex-row justify-between items-center gap-4">
           <p className="text-gray-400 text-sm">
-            © {year} Moskur.dev. All rights reserved.
+            © {year} Omollo Victor. All rights reserved.
           </p>
           <div className="flex items-center gap-4">
-            <a href="#" className="text-gray-400 hover:text-neon transition-colors">
+            <a 
+              href="https://github.com/SK3CHI3" 
+              className="text-gray-400 hover:text-neon transition-colors"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
               <Github size={20} />
             </a>
-            <a href="#" className="text-gray-400 hover:text-neon transition-colors">
+            <a 
+              href="https://www.linkedin.com/in/omollo-victor-otieno-28b942356" 
+              className="text-gray-400 hover:text-neon transition-colors"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
               <Linkedin size={20} />
             </a>
-            <a href="#" className="text-gray-400 hover:text-neon transition-colors">
+            <a 
+              href="https://x.com/sk3chie" 
+              className="text-gray-400 hover:text-neon transition-colors"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
               <Twitter size={20} />
             </a>
           </div>

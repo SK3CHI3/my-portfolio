@@ -62,10 +62,15 @@ const Hero: React.FC = () => {
               <Link to="/contact" className="btn-primary">
                 Let's Talk
               </Link>
-              <button className="btn-secondary group">
+              <a 
+                href="https://drive.google.com/uc?export=download&id=YOURFILEID" 
+                className="btn-secondary group"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
                 <ArrowDown size={18} className="group-hover:animate-bounce" />
                 Download CV
-              </button>
+              </a>
             </div>
           </div>
           

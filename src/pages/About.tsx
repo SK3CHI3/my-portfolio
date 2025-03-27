@@ -2,7 +2,7 @@
 import React, { useEffect } from 'react';
 import Header from '../components/Header';
 import Footer from '../components/Footer';
-import { ArrowRight, Code, Rocket, Palette, Award } from 'lucide-react';
+import { ArrowRight, Code, Cloud, Shield, Server } from 'lucide-react';
 import { Link } from 'react-router-dom';
 
 const About: React.FC = () => {
@@ -20,18 +20,18 @@ const About: React.FC = () => {
             <div className="flex flex-col md:flex-row gap-10">
               <div className="md:w-1/2">
                 <p className="text-gray-300 mb-6">
-                  Hi there! I'm Moskur, a passionate web developer with over 3 years of experience
-                  in building modern, responsive, and user-friendly websites and applications.
+                  Hi there! I'm Omollo Victor, a passionate technology enthusiast with expertise in
+                  Fullstack Development, Cloud Computing, and Cybersecurity.
                 </p>
                 <p className="text-gray-300 mb-6">
-                  I specialize in both <span className="text-purple-400 font-bold">frontend</span> and 
-                  <span className="text-purple-400 font-bold"> backend</span> development, with a strong 
-                  foundation in React, TypeScript, Node.js, and database management.
+                  I specialize in building <span className="text-purple-400 font-bold">secure</span> and 
+                  <span className="text-purple-400 font-bold"> scalable</span> solutions, with a strong 
+                  foundation in React, Node.js, AWS, and modern security practices.
                 </p>
                 <p className="text-gray-300 mb-8">
-                  My journey in web development began with a curiosity about how websites work, and it has 
-                  evolved into a passion for creating digital experiences that are not only functional but 
-                  also aesthetically pleasing and intuitive.
+                  My journey in tech began with a curiosity about how systems work and how to make them more 
+                  secure. This curiosity has evolved into a passion for creating digital solutions that are 
+                  not only functional and user-friendly but also robust and secure against modern threats.
                 </p>
                 <Link to="/contact" className="btn-primary inline-flex items-center">
                   Let's Connect <ArrowRight className="ml-2" size={18} />
@@ -46,31 +46,31 @@ const About: React.FC = () => {
                         <Code size={24} />
                       </div>
                       <div>
-                        <h3 className="text-xl font-semibold mb-2">Web Development</h3>
+                        <h3 className="text-xl font-semibold mb-2">Fullstack Development</h3>
                         <p className="text-gray-300">
-                          Building responsive websites with modern technologies like React, TypeScript, and Tailwind CSS.
+                          Building responsive, modern web applications with React, TypeScript, Node.js, and database technologies.
                         </p>
                       </div>
                     </div>
                     <div className="flex items-start gap-4">
                       <div className="bg-neon text-dark p-3 rounded-full">
-                        <Rocket size={24} />
+                        <Cloud size={24} />
                       </div>
                       <div>
-                        <h3 className="text-xl font-semibold mb-2">Backend Solutions</h3>
+                        <h3 className="text-xl font-semibold mb-2">Cloud Computing</h3>
                         <p className="text-gray-300">
-                          Creating robust backend systems with Node.js, Express, MongoDB, and Firebase.
+                          Designing and implementing cloud infrastructure on AWS and Azure, with expertise in containerization and orchestration.
                         </p>
                       </div>
                     </div>
                     <div className="flex items-start gap-4">
                       <div className="bg-neon text-dark p-3 rounded-full">
-                        <Palette size={24} />
+                        <Shield size={24} />
                       </div>
                       <div>
-                        <h3 className="text-xl font-semibold mb-2">UI/UX Design</h3>
+                        <h3 className="text-xl font-semibold mb-2">Cybersecurity</h3>
                         <p className="text-gray-300">
-                          Designing intuitive user interfaces with a focus on user experience.
+                          Implementing security best practices, penetration testing, and ensuring compliance with security standards.
                         </p>
                       </div>
                     </div>
@@ -90,13 +90,13 @@ const About: React.FC = () => {
                 <div className="space-y-6">
                   <div>
                     <h4 className="text-xl font-medium mb-1">BSc in Computer Science</h4>
-                    <p className="text-gray-600 mb-1">University of Technology</p>
-                    <p className="text-gray-500">2017 - 2021</p>
+                    <p className="text-gray-600 mb-1">University of Nairobi</p>
+                    <p className="text-gray-500">2019 - 2023</p>
                   </div>
                   <div>
-                    <h4 className="text-xl font-medium mb-1">Web Development Bootcamp</h4>
-                    <p className="text-gray-600 mb-1">CodeCamp Academy</p>
-                    <p className="text-gray-500">2020</p>
+                    <h4 className="text-xl font-medium mb-1">AWS Certified Solutions Architect</h4>
+                    <p className="text-gray-600 mb-1">Amazon Web Services</p>
+                    <p className="text-gray-500">2022</p>
                   </div>
                 </div>
               </div>
@@ -105,14 +105,14 @@ const About: React.FC = () => {
                 <h3 className="text-2xl font-semibold mb-4">Work Experience</h3>
                 <div className="space-y-6">
                   <div>
-                    <h4 className="text-xl font-medium mb-1">Senior Frontend Developer</h4>
-                    <p className="text-gray-600 mb-1">TechSolutions Inc.</p>
+                    <h4 className="text-xl font-medium mb-1">Fullstack Developer</h4>
+                    <p className="text-gray-600 mb-1">Tech Solutions Kenya</p>
                     <p className="text-gray-500">2022 - Present</p>
                   </div>
                   <div>
-                    <h4 className="text-xl font-medium mb-1">Web Developer</h4>
-                    <p className="text-gray-600 mb-1">Creative Agency</p>
-                    <p className="text-gray-500">2020 - 2022</p>
+                    <h4 className="text-xl font-medium mb-1">Cloud Security Specialist</h4>
+                    <p className="text-gray-600 mb-1">Cybersafe Solutions</p>
+                    <p className="text-gray-500">2021 - 2022</p>
                   </div>
                 </div>
               </div>
@@ -142,33 +142,33 @@ const About: React.FC = () => {
                   <li>Node.js</li>
                   <li>Express</li>
                   <li>MongoDB</li>
-                  <li>Firebase</li>
+                  <li>PostgreSQL</li>
                   <li>RESTful APIs</li>
                   <li>GraphQL</li>
                 </ul>
               </div>
               
               <div className="bg-white p-6 rounded-xl shadow-sm">
-                <h3 className="text-xl font-semibold mb-3 text-center">Tools</h3>
+                <h3 className="text-xl font-semibold mb-3 text-center">Cloud & DevOps</h3>
                 <ul className="space-y-2 text-center">
-                  <li>Git & GitHub</li>
-                  <li>VS Code</li>
-                  <li>Figma</li>
-                  <li>Adobe XD</li>
-                  <li>Webpack</li>
-                  <li>Jest</li>
+                  <li>AWS</li>
+                  <li>Azure</li>
+                  <li>Docker</li>
+                  <li>Kubernetes</li>
+                  <li>Terraform</li>
+                  <li>CI/CD Pipelines</li>
                 </ul>
               </div>
               
               <div className="bg-white p-6 rounded-xl shadow-sm">
-                <h3 className="text-xl font-semibold mb-3 text-center">Other</h3>
+                <h3 className="text-xl font-semibold mb-3 text-center">Security</h3>
                 <ul className="space-y-2 text-center">
-                  <li>Responsive Design</li>
-                  <li>SEO Optimization</li>
-                  <li>Performance Tuning</li>
-                  <li>CI/CD</li>
-                  <li>Agile/Scrum</li>
-                  <li>UI/UX Principles</li>
+                  <li>Penetration Testing</li>
+                  <li>Network Security</li>
+                  <li>OWASP Top 10</li>
+                  <li>Security Auditing</li>
+                  <li>Threat Modeling</li>
+                  <li>Incident Response</li>
                 </ul>
               </div>
             </div>

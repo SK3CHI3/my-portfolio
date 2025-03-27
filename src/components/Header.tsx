@@ -32,7 +32,7 @@ const Header: React.FC = () => {
           className="flex items-center gap-2 text-xl font-bold text-white hover:opacity-90 transition-opacity"
         >
           <div className="w-5 h-5 bg-neon"></div>
-          <span className="uppercase tracking-tight">TECHTINKER</span>
+          <span className="uppercase tracking-tight">OMOLLO VICTOR</span>
         </Link>
         
         <nav className="hidden md:flex items-center gap-8">

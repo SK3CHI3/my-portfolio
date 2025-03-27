@@ -3,7 +3,7 @@ import React, { useEffect, useState } from 'react';
 import Header from '../components/Header';
 import Footer from '../components/Footer';
 import { Card, CardContent } from "@/components/ui/card";
-import { ArrowRight } from 'lucide-react';
+import { ArrowRight, Github, ExternalLink } from 'lucide-react';
 import { Link } from 'react-router-dom';
 
 interface Project {
@@ -12,7 +12,8 @@ interface Project {
   category: string;
   description: string;
   image: string;
-  link: string;
+  liveLink: string;
+  githubLink: string;
 }
 
 const Projects: React.FC = () => {
@@ -25,55 +26,61 @@ const Projects: React.FC = () => {
   const projects: Project[] = [
     {
       id: 1,
-      title: "A Power That Brings Good Things",
-      category: "E-commerce",
-      description: "A fully responsive e-commerce platform with cart functionality and payment integration.",
+      title: "Universal Resource Hub",
+      category: "Web Development",
+      description: "A comprehensive platform providing educational resources and learning materials for students and educators.",
       image: "/lovable-uploads/bcf4dfa9-3315-4514-a56b-463982860756.png",
-      link: "/projects/1"
+      liveLink: "https://universal-resource-hub.netlify.app",
+      githubLink: "https://github.com/SK3CHI3/universal-resource-hub"
     },
     {
       id: 2,
-      title: "Local To Global",
-      category: "Travel",
-      description: "A travel blog and booking platform for adventurers seeking unique experiences.",
+      title: "Kenyan Recipe Generator",
+      category: "Web Development",
+      description: "An application that generates random Kenyan recipes with ingredients and preparation instructions.",
       image: "/lovable-uploads/bcf4dfa9-3315-4514-a56b-463982860756.png",
-      link: "/projects/2"
+      liveLink: "https://kenyan-recipe-generator.netlify.app",
+      githubLink: "https://github.com/SK3CHI3/random-kenyan-recipe-generator"
     },
     {
       id: 3,
-      title: "Healthy Options",
-      category: "Fitness",
-      description: "A fitness application tracking workouts and providing nutritional guidance.",
+      title: "Cloud Security Framework",
+      category: "Cybersecurity",
+      description: "A comprehensive security framework for cloud-based applications, focusing on AWS security best practices.",
       image: "/lovable-uploads/bcf4dfa9-3315-4514-a56b-463982860756.png",
-      link: "/projects/3"
+      liveLink: "#",
+      githubLink: "https://github.com/SK3CHI3"
     },
     {
       id: 4,
-      title: "Kim's Kitchen",
-      category: "Restaurant",
-      description: "A restaurant website with online ordering and reservation systems.",
+      title: "DevOps Automation Pipeline",
+      category: "Cloud Computing",
+      description: "A CI/CD pipeline implementation using GitHub Actions and AWS for automated testing and deployment.",
       image: "/lovable-uploads/bcf4dfa9-3315-4514-a56b-463982860756.png",
-      link: "/projects/4"
+      liveLink: "#",
+      githubLink: "https://github.com/SK3CHI3"
     },
     {
       id: 5,
-      title: "Tech News Platform",
-      category: "Blog",
-      description: "A modern tech news platform with real-time updates and user comments.",
+      title: "Network Security Monitor",
+      category: "Cybersecurity",
+      description: "A tool for monitoring network traffic and detecting potential security threats in real-time.",
       image: "/lovable-uploads/bcf4dfa9-3315-4514-a56b-463982860756.png",
-      link: "/projects/5"
+      liveLink: "#",
+      githubLink: "https://github.com/SK3CHI3"
     },
     {
       id: 6,
-      title: "Portfolio Template",
-      category: "Portfolio",
-      description: "A customizable portfolio template for creative professionals.",
+      title: "Serverless API Framework",
+      category: "Cloud Computing",
+      description: "A serverless framework for building scalable APIs using AWS Lambda and API Gateway.",
       image: "/lovable-uploads/bcf4dfa9-3315-4514-a56b-463982860756.png",
-      link: "/projects/6"
+      liveLink: "#",
+      githubLink: "https://github.com/SK3CHI3"
     }
   ];
 
-  const categories = ['all', 'E-commerce', 'Travel', 'Fitness', 'Restaurant', 'Blog', 'Portfolio'];
+  const categories = ['all', 'Web Development', 'Cybersecurity', 'Cloud Computing'];
   
   const filteredProjects = filter === 'all' 
     ? projects 
@@ -87,8 +94,8 @@ const Projects: React.FC = () => {
           <div className="hero-container">
             <h1 className="text-4xl md:text-5xl font-bold mb-8">My Projects</h1>
             <p className="text-gray-300 max-w-3xl mb-6">
-              Explore my portfolio of projects that showcase my skills and expertise in web development. 
-              Each project represents a unique challenge and demonstrates my approach to problem-solving.
+              Explore my portfolio of projects showcasing my skills in Fullstack Development, Cloud Computing, and Cybersecurity.
+              Each project represents unique challenges and demonstrates my approach to building secure, scalable solutions.
             </p>
             
             <div className="flex flex-wrap gap-2 mb-8">
@@ -113,7 +120,7 @@ const Projects: React.FC = () => {
           <div className="hero-container">
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
               {filteredProjects.map((project) => (
-                <Card key={project.id} className="overflow-hidden border-0 shadow-lg rounded-xl hover:shadow-xl transition-shadow">
+                <Card key={project.id} className="overflow-hidden border-0 shadow-lg rounded-xl hover:shadow-xl transition-shadow hover:scale-105 duration-300">
                   <img 
                     src={project.image} 
                     alt={project.title} 
@@ -123,13 +130,26 @@ const Projects: React.FC = () => {
                     <p className="text-gray-500 mb-2">{project.category}</p>
                     <h3 className="text-xl font-bold mb-2">{project.title}</h3>
                     <p className="text-gray-600 mb-4">{project.description}</p>
-                    <Link 
-                      to={project.link}
-                      className="inline-flex items-center text-neon hover:underline"
-                    >
-                      View Details 
-                      <ArrowRight size={16} className="ml-1" />
-                    </Link>
+                    <div className="flex items-center gap-4">
+                      <a 
+                        href={project.liveLink}
+                        className="inline-flex items-center text-neon hover:underline group"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                      >
+                        <ExternalLink size={16} className="mr-1" />
+                        Demo
+                      </a>
+                      <a 
+                        href={project.githubLink}
+                        className="inline-flex items-center text-gray-700 hover:underline group"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                      >
+                        <Github size={16} className="mr-1" />
+                        Code
+                      </a>
+                    </div>
                   </CardContent>
                 </Card>
               ))}
